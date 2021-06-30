@@ -58,6 +58,9 @@ const style = /*css*/`
   border-color: rgb(160,160,160);
   padding: 10px;
   padding-top: 0px;
+  background-color: white;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
 }
 
 .product-name {
