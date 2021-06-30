@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "http-server": "^0.12.3",
+    "lit-html": "^1.4.1"
+  }
+}
