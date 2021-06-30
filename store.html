@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>Online Store</title>
+    <script src="sellitem.js"></script>
+    <style>
+        .catalog {
+            display: flex;
+            flex-wrap: wrap;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="catalog">
+        <product-card image-path="img/products/1.jpg" rating="4.5" price="56990" original-price="90000">
+            <div slot="product-name">Monitor Análogo Monocromático</div>
+        </product-card>
+        <product-card image-path="img/products/2.jpg" price="23990" original-price="30000">
+            <div slot="product-name">Juego Poleras Café</div>
+        </product-card>
+        <product-card image-path="img/products/3.jpg" rating="3.5" price="72990">
+            <div slot="product-name">Base con Batería para Amazon Alexa</div>
+        </product-card>
+        <product-card image-path="img/products/4.jpg" price="7990">
+            <div slot="product-name">Destapador Multiuso</div>
+        </product-card>
+    </div>
+</body>
