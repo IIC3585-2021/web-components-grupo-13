@@ -104,9 +104,9 @@ const priceTemplate = (price, originalPrice) => html`
       : null
     }
     <div class="price-values">
-    <span class="final-price">${price}</span>
+    <span class="final-price">${toPrice(price)}</span>
     ${originalPrice
-      ? html`<span class="original-price">${originalPrice}</span>`
+      ? html`<span class="original-price">${toPrice(originalPrice)}</span>`
       : null
     }
     </div>
@@ -116,6 +116,10 @@ const priceTemplate = (price, originalPrice) => html`
 const discount = (price, originalPrice) => {
   let discount = Math.round((parseInt(originalPrice) - parseInt(price))/parseInt(originalPrice) * 100);
   return discount;
+}
+
+const toPrice = number => {
+  return '$' + String(number).replace(/\B(?=(\d{3})+(?!\d))/g, '.');
 }
 
 let product1 = {

@@ -127,16 +127,16 @@ class ProductCard extends HTMLElement {
 
   connectedCallback() {
     let toPrice = number => {
-      return number.replace(/\B(?=(\d{3})+(?!\d))/g, '.');
+      return '$' + number.replace(/\B(?=(\d{3})+(?!\d))/g, '.');
     }
 
     this.shadowRoot.querySelector('img').src = this.getAttribute('image-path');
-    this.shadowRoot.querySelector('.final-price').textContent = '$' + toPrice(this.getAttribute('price'));
+    this.shadowRoot.querySelector('.final-price').textContent = toPrice(this.getAttribute('price'));
     if (this.getAttribute('original-price') !== null) {
       let price = this.getAttribute('price');
       let originalPrice = this.getAttribute('original-price');
       console.log(price);
-      this.shadowRoot.querySelector('.original-price').textContent = '$' + toPrice(originalPrice);
+      this.shadowRoot.querySelector('.original-price').textContent = toPrice(originalPrice);
       let discount = Math.round((parseInt(originalPrice) - parseInt(price))/parseInt(originalPrice) * 100);
       this.shadowRoot.querySelector('.discount').textContent = -1 * discount + '%';
       this.shadowRoot.querySelector('.discount').classList.remove('invisible');
