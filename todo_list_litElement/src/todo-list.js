@@ -1,10 +1,29 @@
 // referencia: https://codesandbox.io/s/litelement-medium--exercise-2-yxohb?file=/.babelrc
-import {LitElement, html} from 'lit-element';
+import {LitElement, html, css} from 'lit-element';
 import { repeat } from "lit-html/directives/repeat";
 
 import "./checkbox";
 
 export class TodoElement extends LitElement {
+    static get styles(){
+        return css `
+        .boton {
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            cursor: pointer;
+            background-color: #4628e6;
+            color: white;
+            border-radius: 8px;
+            width: 10%;
+            height: 40px;
+            border: 0;
+            margin-top: 1rem;
+            margin-bottom: 1rem;
+        }
+        .div {
+            font-family: 'Arial', sans-serif;
+          }
+        `;
+    }
     
     static get properties(){
         return{
@@ -57,7 +76,6 @@ export class TodoElement extends LitElement {
 
     render () {
         return html`
-			<h1>To do</h1>
             <form id="todo-input">
 				<div class="container-form ">
 					<input 
@@ -69,7 +87,7 @@ export class TodoElement extends LitElement {
 				</div>
 				
                 <button 
-                    class=""
+                    class="boton"
                     @click=${this._onAddTodo}
                     ?disabled=${this.disabled}>
                     Agregar
@@ -85,7 +103,7 @@ export class TodoElement extends LitElement {
             )}
 			</div>
             <button 
-                    class=""
+                    class="boton"
                     @click=${this._onRemoveTodo}
                     ?disabled=${this.disabled}>
                     Eliminar
