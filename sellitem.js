@@ -114,15 +114,8 @@ class ProductCard extends HTMLElement {
       if (newValue !== null) {
         this.shadowRoot.querySelector('.rating').textContent = newValue;
         this.shadowRoot.querySelector('.star-icon').textContent = '★';
-        // this.shadowRoot.querySelector('.star-icon').className = 'bi-star-fill::before';
       }
-    } else if (name === 'price') {
-      this.shadowRoot.querySelector('.final-price').textContent = '$' + newValue.replace(/\B(?=(\d{3})+(?!\d))/g, '.');
-    } else if (name === 'original-price') {
-      this.shadowRoot.querySelector('.original-price').textContent = '$' + newValue.replace(/\B(?=(\d{3})+(?!\d))/g, '.');
-      console.log(this.price)
     }
-
   }
 
   connectedCallback() {
